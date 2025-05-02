@@ -1,0 +1,18 @@
+package com.example.commonlib.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class KafkaConfiguration {
+
+    @Bean
+    public KafkaProducerService kafkaProducerService() {
+        return new KafkaProducerService();
+    }
+
+    @Bean
+    public KafkaConsumerService kafkaConsumerService() {
+        return new KafkaConsumerService();
+    }
+}

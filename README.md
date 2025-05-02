@@ -1,15 +1,16 @@
 project-root/
 │
-├── common-lib/                   # Common Kafka producer/consumer logic
+├── common-lib/                   # Common Kafka producer/consumer logic (Reusable)
 │   ├── pom.xml
 │   ├── src/
 │   │   ├── main/
 │   │   │   ├── java/
 │   │   │   │   ├── com/example/commonlib/
-│   │   │   │   │   ├── config/
+│   │   │   │   │   ├── kafka/
+│   │   │   │   │   │   ├── KafkaConsumerConfig.java
+│   │   │   │   │   │   ├── KafkaProducerConfig.java
 │   │   │   │   │   │   ├── KafkaConsumerService.java
-│   │   │   │   │   │   ├── KafkaProducerService.java
-│   │   │   │   │   │   └── KafkaConfiguration.java
+│   │   │   │   │   │   └── KafkaProducerService.java
 │   ├── target/                  # Build output
 │
 ├── data-distribution/            # H2 Database and persistence layer
@@ -26,7 +27,7 @@ project-root/
 │   │   │   │   │   │   └── DataService.java
 │   ├── target/                  # Build output
 │
-├── orchestrator/                 # Orchestrator which uses both common-lib and data-distribution
+├── orchestrator/                 # Orchestrator using common-lib and data-distribution
 │   ├── pom.xml
 │   ├── src/
 │   │   ├── main/

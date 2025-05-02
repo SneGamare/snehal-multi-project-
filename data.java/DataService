@@ -1,0 +1,23 @@
+package com.example.datadistribution.service;
+
+import com.example.datadistribution.model.DataEntity;
+import com.example.datadistribution.repository.DataRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class DataService {
+
+    private final DataRepository dataRepository;
+
+    @Autowired
+    public DataService(DataRepository dataRepository) {
+        this.dataRepository = dataRepository;
+    }
+
+    public DataEntity saveData(String data) {
+        DataEntity entity = new DataEntity();
+        entity.setData(data);
+        return dataRepository.save(entity);
+    }
+}

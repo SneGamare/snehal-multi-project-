@@ -24,5 +24,6 @@ public class KafkaProducerService {
         producer.send(record);
         System.out.println("Message sent: " + message);
         producer.close();
+
     }
 }
